@@ -1,15 +1,13 @@
-/* eslint-disable no-undef */
 import axios from "axios";
+const USER_API = `https://api.github.com/users`;
 
 async function getUsers(page) {
   const API_URL = `https://api.github.com/search/users?q=followers:%3E=1000&per_page=20&page=${page}`;
-  // const apiKey = process.env.REACT_APP_AUTH_TOKEN;
 
   try {
-    const res = await axios.get(`${API_URL}`, {
+    const res = await axios.get(`${API_URL}`,{
       headers: {
-        // "User-Agent": "request",
-        Authorization: `Beare token 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`,
+        Authorization: `Bearer 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`,
       },
     });
     return res.data.items;
@@ -19,17 +17,13 @@ async function getUsers(page) {
   }
 }
 
-const USER_API = `https://api.github.com/users`;
 
-// new token
-// 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
 
 async function getUser(title) {
   try {
     const response = await axios.get(`${USER_API}/${title}`, {
       headers: {
-        // "User-Agent": "request",
-        Authorization: `Beare token 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`,
+        Authorization: `Bearer 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`,
       },
     });
     return response.data;
@@ -44,8 +38,8 @@ async function getOrgs(title) {
       `https://api.github.com/users/${title}/orgs`,
       {
         headers: {
-          // "User-Agent": "request",
-          Authorization: `Beare token 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`,
+          "User-Agent": "GitHubDataFetcher",
+          Authorization: `Bearer  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`,
         },
       }
     );
@@ -61,8 +55,7 @@ async function getRepos(title) {
       `https://api.github.com/users/${title}/repos`,
       {
         headers: {
-          // "User-Agent": "request",
-          Authorization: `Beare token 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`,
+          Authorization: `Bearer token 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`,
         },
       }
     );
