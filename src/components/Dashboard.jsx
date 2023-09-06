@@ -6,7 +6,7 @@ import { AppContext } from "../context/AppContext";
 
 const Dashboard = () => {
   const { user, setPage } = useContext(AppContext);
-
+console.log(user)
   return (
     <div className={dashboardStyles.main}>
       <Header />

@@ -1,15 +1,12 @@
 import axios from "axios";
+
 const USER_API = `https://api.github.com/users`;
 
 async function getUsers(page) {
   const API_URL = `https://api.github.com/search/users?q=followers:%3E=1000&per_page=20&page=${page}`;
 
   try {
-    const res = await axios.get(`${API_URL}`,{
-      headers: {
-        Authorization: `Bearer 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`,
-      },
-    });
+    const res = await axios.get(`${API_URL}`,);
     return res.data.items;
   } catch (error) {
     console.log(error);
@@ -17,13 +14,11 @@ async function getUsers(page) {
   }
 }
 
-
-
 async function getUser(title) {
   try {
     const response = await axios.get(`${USER_API}/${title}`, {
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
       },
     });
     return response.data;
@@ -38,8 +33,7 @@ async function getOrgs(title) {
       `https://api.github.com/users/${title}/orgs`,
       {
         headers: {
-          "User-Agent": "GitHubDataFetcher",
-          Authorization: `Bearer  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`,
+          Authorization: `Bearer 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`,
         },
       }
     );
@@ -55,7 +49,7 @@ async function getRepos(title) {
       `https://api.github.com/users/${title}/repos`,
       {
         headers: {
-          Authorization: `Bearer token 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`,
+          Authorization: `Bearer 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`,
         },
       }
     );
