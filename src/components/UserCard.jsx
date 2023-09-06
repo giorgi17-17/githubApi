@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import userStyles from "../css/Usercard.module.css";
+import userStyles from "../css/UserCard.module.css";
 import { Link } from "react-router-dom";
 import { getUser } from "../http/fetch";
 

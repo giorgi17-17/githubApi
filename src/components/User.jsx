@@ -63,7 +63,7 @@ const User = () => {
         </div>
         <div className={userStyles.repos}>
           {repos
-            .map((rep) => {
+            ?.map((rep) => {
               return (
                 <div className={userStyles.repo} key={rep.id}>
                   <div className={userStyles.repoElements}>
