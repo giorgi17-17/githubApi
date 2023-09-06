@@ -9,7 +9,7 @@ async function getUsers(page) {
     const res = await axios.get(`${API_URL}`, {
       headers: {
         // "User-Agent": "request",
-        Authorization: `token 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`,
+        Authorization: `Beare token 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`,
       },
     });
     return res.data.items;
@@ -28,7 +28,8 @@ async function getUser(title) {
   try {
     const response = await axios.get(`${USER_API}/${title}`, {
       headers: {
-        Authorization: `token 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`,
+        // "User-Agent": "request",
+        Authorization: `Beare token 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`,
       },
     });
     return response.data;
@@ -43,7 +44,8 @@ async function getOrgs(title) {
       `https://api.github.com/users/${title}/orgs`,
       {
         headers: {
-          Authorization: `token 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`,
+          // "User-Agent": "request",
+          Authorization: `Beare token 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`,
         },
       }
     );
@@ -59,7 +61,8 @@ async function getRepos(title) {
       `https://api.github.com/users/${title}/repos`,
       {
         headers: {
-          Authorization: `token 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`,
+          // "User-Agent": "request",
+          Authorization: `Beare token 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`,
         },
       }
     );
