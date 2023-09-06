@@ -7,7 +7,7 @@ async function getUsers(page) {
   try {
     const res = await axios.get(`${API_URL}`,{
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
       },
     });
     return res.data.items;
@@ -23,7 +23,7 @@ async function getUser(title) {
   try {
     const response = await axios.get(`${USER_API}/${title}`, {
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
       },
     });
     return response.data;
